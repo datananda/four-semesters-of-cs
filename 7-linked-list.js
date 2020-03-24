@@ -77,12 +77,14 @@ class LinkedList {
     }
 
     delete(index) {
+        let toDelete;
+
         if (index === 0) {
-            let toDelete = this.head;
+            toDelete = this.head;
             this.head = toDelete.next;
         } else {
             let oneBefore = this._findByIndex(index - 1);
-            let toDelete = oneBefore.next;
+            toDelete = oneBefore.next;
             oneBefore.next = toDelete.next;
 
             if (!oneBefore.next.next) {
